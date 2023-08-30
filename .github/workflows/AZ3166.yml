@@ -37,3 +37,9 @@ jobs:
         run: |
           cmake -Bbuild -GNinja -DCMAKE_TOOLCHAIN_FILE="../../cmake/arm-gcc-cortex-m4.cmake" -DCMAKE_BUILD_TYPE="${{ matrix.type }}"
           cmake --build build   
+
+      - name: Upload bin
+        uses: actions/upload-artifact@v3
+        with:
+          name: bin
+          path: MXChip/AZ3166/build/*.bin
