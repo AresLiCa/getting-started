@@ -2,10 +2,10 @@ name: AZ3166
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  # push:
+  #   branches: [ master ]
+  # pull_request:
+  #   branches: [ master ]
 
 defaults:
   run:
@@ -16,8 +16,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
-        type: [Debug, Release]
+        os: [windows-latest]
+        type: [Release]
+      # matrix:
+      #   os: [ubuntu-latest, windows-latest]
+      #   type: [Debug, Release]
 
     steps:
       - name: Checkout code
